@@ -202,7 +202,18 @@ TELEGRAM_CHAT_ID = env("TELEGRAM_CHAT_ID", default="")
 # --- Production hardening (applied when DEBUG is off) -----------------------
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = "SAMEORIGIN"
+
+    # Secure cookies require HTTPS — if the cert isn't installed yet, the CSRF
+    # cookie won't be sent over plain HTTP and the «заявка» form fails CSRF.
+    # Keep USE_HTTPS=False until SSL is live, then switch it to True.
+    USE_HTTPS = env.bool("USE_HTTPS", default=True)
+    SESSION_COOKIE_SECURE = USE_HTTPS
+    CSRF_COOKIE_SECURE = USE_HTTPS
+
+    if not USE_HTTPS:
+        # Allow POSTs from the plain-HTTP origin while running without SSL.
+        CSRF_TRUSTED_ORIGINS += [
+            f"http://{h}" for h in ALLOWED_HOSTS if h not in ("*", "")
+        ]
