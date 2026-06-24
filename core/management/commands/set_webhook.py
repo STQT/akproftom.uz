@@ -19,7 +19,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         if not (settings.TELEGRAM_BOT_TOKEN or "").strip():
             raise CommandError("TELEGRAM_BOT_TOKEN is not set.")
-        base = (settings.TELEGRAM_WEBHOOK_BASE or "").strip().rstrip("/")
+        base = (settings.TELEGRAM_WEBHOOK_BASE or "").split("#", 1)[0].strip().rstrip("/")
         if not base.startswith("https://"):
             raise CommandError(
                 "TELEGRAM_WEBHOOK_BASE must be an https:// URL (Telegram requires "

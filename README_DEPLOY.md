@@ -50,17 +50,22 @@ SECRET_KEY            = <длинная случайная строка>
 DEBUG                 = False
 ALLOWED_HOSTS         = akproftom.uz,www.akproftom.uz
 CSRF_TRUSTED_ORIGINS  = https://akproftom.uz,https://www.akproftom.uz
-USE_HTTPS             = True              # см. раздел про SSL ниже
+USE_HTTPS             = True
 DB_ENGINE             = mysql
 DB_NAME               = cpuser_akproftom
 DB_USER               = cpuser_akprof
 DB_PASSWORD           = <пароль БД>
 DB_HOST               = localhost
 DB_PORT               = 3306
-MEDIA_ROOT            = /home/cpuser/public_html/media   # если медиа на диске, а не в R2
+MEDIA_ROOT            = /home/cpuser/public_html/media
 ```
 
-(Замените `cpuser` на ваш cPanel-логин.)
+(Замените `cpuser` на ваш cPanel-логин. `MEDIA_ROOT` нужен только если медиа на
+диске, а не в R2 — см. раздел 7.)
+
+> ⚠️ **Не добавляйте комментарии `#` в той же строке, что и значение** —
+> `.env` сохранит их как часть значения (напр. `TELEGRAM_WEBAPP_URL` с `#` сломает
+> кнопку Mini App). Комментарии — только на отдельных строках.
 
 **Медиа/статика на Cloudflare R2** (опционально — рекомендуется для прода).
 Добавьте, если используете R2 (см. раздел 7):
@@ -81,11 +86,15 @@ R2_PUBLIC_URL         = https://pub-xxxxxxxx.r2.dev
 
 ```
 TELEGRAM_BOT_TOKEN      = <токен от @BotFather>
-TELEGRAM_CHAT_ID        = <chat_id для заявок>     # можно несколько через запятую
-TELEGRAM_WEBHOOK_SECRET = <длинная случайная строка>
+TELEGRAM_CHAT_ID        = <chat_id для заявок>
+TELEGRAM_WEBHOOK_SECRET = <случайная строка, A-Za-z0-9_- , 1-256 символов>
 TELEGRAM_WEBHOOK_BASE   = https://akproftom.uz
-TELEGRAM_WEBAPP_URL     = https://akproftom.uz     # Mini App (кнопка «Открыть сайт»)
+TELEGRAM_WEBAPP_URL     = https://akproftom.uz
 ```
+
+`TELEGRAM_CHAT_ID` может быть один id или несколько через запятую.
+`TELEGRAM_WEBAPP_URL` — URL Mini App (кнопка «Открыть сайт»); оставьте пустым,
+пока нет SSL. Значения пишите **без** inline-комментариев `#`.
 
 ## 5. Установить зависимости
 

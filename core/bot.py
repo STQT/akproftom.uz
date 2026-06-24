@@ -31,8 +31,13 @@ def _full_name(user):
 
 
 def _webapp_url():
-    url = (getattr(settings, "TELEGRAM_WEBAPP_URL", "") or "").strip()
-    return url if url.startswith("https://") else ""  # web_app requires https
+    # Tolerate accidental inline comments / trailing spaces in the env value
+    # (django-environ keeps everything after `=`), so a messy value just hides
+    # the button instead of breaking the whole message with a 400.
+    raw = (getattr(settings, "TELEGRAM_WEBAPP_URL", "") or "")
+    raw = raw.split("#", 1)[0].strip()
+    raw = raw.split()[0] if raw else ""
+    return raw if raw.startswith("https://") else ""  # web_app requires https
 
 
 def _main_menu_kb():
