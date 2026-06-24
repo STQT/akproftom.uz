@@ -192,6 +192,13 @@ else:
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
+# --- Telegram notifications (site inquiries) -------------------------------
+# When both are set, new «заявки» are pushed to the chat(s). TELEGRAM_CHAT_ID
+# may be a single id or a comma-separated list.
+TELEGRAM_BOT_TOKEN = env("TELEGRAM_BOT_TOKEN", default="")
+TELEGRAM_CHAT_ID = env("TELEGRAM_CHAT_ID", default="")
+
+
 # --- Production hardening (applied when DEBUG is off) -----------------------
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")

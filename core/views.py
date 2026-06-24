@@ -10,6 +10,7 @@ from projects.models import Project
 
 from .forms import InquiryForm
 from .models import Certificate
+from .telegram import notify_inquiry
 
 
 def home(request):
@@ -77,6 +78,7 @@ def inquiry_create(request):
             inquiry.product = Product.objects.filter(pk=product_id).first()
         inquiry.source_url = redirect_to[:300]
         inquiry.save()
+        notify_inquiry(inquiry)  # fire-and-forget Telegram push
         messages.success(
             request, _("Спасибо! Ваша заявка отправлена. Мы свяжемся с вами.")
         )
