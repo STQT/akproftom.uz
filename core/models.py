@@ -98,3 +98,27 @@ class Inquiry(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.phone})"
+
+
+class BotDialog(models.Model):
+    """Per-user conversation state for the Telegram bot's inquiry flow.
+
+    Persisted in the DB (not memory) because the webhook runs under Passenger
+    where several worker processes may handle consecutive updates.
+    """
+
+    chat_id = models.BigIntegerField(_("Chat ID"), unique=True)
+    step = models.CharField(_("Шаг"), max_length=20, blank=True)
+    name = models.CharField(_("Имя"), max_length=150, blank=True)
+    phone = models.CharField(_("Телефон"), max_length=40, blank=True)
+    product = models.ForeignKey(
+        "catalog.Product", on_delete=models.SET_NULL, null=True, blank=True,
+    )
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = _("Диалог бота")
+        verbose_name_plural = _("Диалоги бота")
+
+    def __str__(self):
+        return f"{self.chat_id} @ {self.step or '-'}"

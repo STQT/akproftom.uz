@@ -10,6 +10,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path, register_converter
 
+from core.views import telegram_webhook
+
 
 class UnicodeSlugConverter:
     """Like the built-in `slug` converter but `\\w` matches Cyrillic too, so
@@ -28,6 +30,9 @@ register_converter(UnicodeSlugConverter, "uslug")
 
 urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),  # set_language endpoint
+    # Telegram webhook — outside i18n_patterns (no language prefix). The URL is
+    # also guarded by a secret token header (see telegram_webhook).
+    path("telegram/webhook/", telegram_webhook, name="telegram_webhook"),
 ]
 
 urlpatterns += i18n_patterns(

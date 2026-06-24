@@ -1,8 +1,13 @@
+import json
+
+from django.conf import settings
 from django.contrib import messages
+from django.http import HttpResponse, HttpResponseForbidden
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.http import url_has_allowed_host_and_scheme
 from django.utils.translation import gettext as _
+from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
 from catalog.models import Category, Color, Product
@@ -85,3 +90,25 @@ def inquiry_create(request):
     else:
         messages.error(request, _("Проверьте правильность заполнения формы."))
     return redirect(redirect_to)
+
+
+@csrf_exempt
+@require_POST
+def telegram_webhook(request):
+    """Receive Telegram updates. Telegram echoes the configured secret token in
+    the X-Telegram-Bot-Api-Secret-Token header — reject anything that doesn't
+    match. Always returns 200 quickly so Telegram doesn't retry."""
+    from .bot import handle_update
+
+    secret = (settings.TELEGRAM_WEBHOOK_SECRET or "").strip()
+    sent = request.headers.get("X-Telegram-Bot-Api-Secret-Token", "")
+    if not secret or sent != secret:
+        return HttpResponseForbidden("forbidden")
+
+    try:
+        update = json.loads(request.body.decode("utf-8"))
+    except (ValueError, UnicodeDecodeError):
+        return HttpResponse(status=400)
+
+    handle_update(update)
+    return HttpResponse("ok")

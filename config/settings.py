@@ -192,11 +192,18 @@ else:
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-# --- Telegram notifications (site inquiries) -------------------------------
-# When both are set, new «заявки» are pushed to the chat(s). TELEGRAM_CHAT_ID
-# may be a single id or a comma-separated list.
+# --- Telegram bot & notifications ------------------------------------------
+# Notifications: when token + chat id are set, new «заявки» are pushed to the
+# chat(s). TELEGRAM_CHAT_ID may be a single id or comma-separated.
 TELEGRAM_BOT_TOKEN = env("TELEGRAM_BOT_TOKEN", default="")
 TELEGRAM_CHAT_ID = env("TELEGRAM_CHAT_ID", default="")
+# Webhook secret echoed by Telegram in a header — set a long random string and
+# register the webhook with `manage.py set_webhook` (requires HTTPS).
+TELEGRAM_WEBHOOK_SECRET = env("TELEGRAM_WEBHOOK_SECRET", default="")
+# Public HTTPS base URL of the site, used to build the webhook URL and the
+# Mini App "web_app" button. Leave empty until SSL is live.
+TELEGRAM_WEBHOOK_BASE = env("TELEGRAM_WEBHOOK_BASE", default="")
+TELEGRAM_WEBAPP_URL = env("TELEGRAM_WEBAPP_URL", default="")
 
 
 # --- Production hardening (applied when DEBUG is off) -----------------------
