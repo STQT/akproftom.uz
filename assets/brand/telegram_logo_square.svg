@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#11365c"/><stop offset="1" stop-color="#071a30"/></linearGradient>
+ <linearGradient id="acc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc24a"/><stop offset="1" stop-color="#f7a91e"/></linearGradient>
+</defs>
+ <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+ <g transform="rotate(-6 256 252)">
+  <path d="M 95.0,278.0 L 141.0,278.0 L 159.0,184.0 L 205.0,184.0 L 223.0,278.0 L 269.0,278.0 L 287.0,184.0 L 333.0,184.0 L 351.0,278.0 L 397.0,278.0 L 415.0,184.0 L 435.0,184.0" fill="none" stroke="#0b2540" stroke-width="36" stroke-linejoin="miter" opacity="0.5"/>
+  <path d="M 86.0,300.0 L 132.0,300.0 L 150.0,206.0 L 196.0,206.0 L 214.0,300.0 L 260.0,300.0 L 278.0,206.0 L 324.0,206.0 L 342.0,300.0 L 388.0,300.0 L 406.0,206.0 L 426.0,206.0" fill="none" stroke="url(#acc)" stroke-width="36" stroke-linejoin="miter"/>
+ </g>
+ <text x="256" y="436" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="56" letter-spacing="5" fill="#fff">AKPROFTOM</text>
+</svg>
