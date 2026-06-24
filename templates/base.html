@@ -6,6 +6,8 @@
   <title>{% block title %}{{ site.company_name }}{% endblock %}</title>
   <meta name="description" content="{% block meta_description %}{% trans "Производство и продажа сэндвич-панелей, профнастила, металлоконструкций в Ташкенте." %}{% endblock %}">
   <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
+  <link rel="icon" href="{% static 'images/favicon-32.png' %}" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
   {% block extra_head %}{% endblock %}
 </head>
@@ -34,7 +36,8 @@
 <header class="header">
   <div class="container header__inner">
     <a class="logo" href="{% url 'core:home' %}">
-      <span class="logo__mark">TPS</span>
+      <img class="logo__mark" src="{% static 'images/logo-mark.svg' %}"
+           alt="{{ site.company_name }}" width="46" height="46">
       <span class="logo__text">TASHKENT<br>PROFNASTIL <b>SERVIS</b></span>
     </a>
 
@@ -81,7 +84,8 @@
   <div class="container footer__grid">
     <div class="footer__col">
       <div class="logo logo--footer">
-        <span class="logo__mark">TPS</span>
+        <img class="logo__mark" src="{% static 'images/logo-mark.svg' %}"
+             alt="{{ site.company_name }}" width="46" height="46">
         <span class="logo__text">TASHKENT<br>PROFNASTIL <b>SERVIS</b></span>
       </div>
       <p class="footer__about">{% trans "Производство кровельных и стеновых сэндвич-панелей, профнастила, металлоконструкций и проката в Ташкенте с 2017 года." %}</p>
