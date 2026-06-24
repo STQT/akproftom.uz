@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Наши работы" %} — {{ site.company_name }}{% endblock %}
+
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <h1>{% trans "Наши работы" %}</h1>
+    <p>{% trans "Реализованные объекты: производственные, складские и торговые здания, металлоконструкции и кровли." %}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% if projects %}
+      <div class="grid grid--projects">
+        {% for project in projects %}
+          <a class="project-card" href="{{ project.get_absolute_url }}">
+            <div class="project-card__media">
+              {% if project.cover %}<img src="{{ project.cover.url }}" alt="{{ project.title }}" loading="lazy">{% endif %}
+            </div>
+            <div class="project-card__body">
+              <h3>{{ project.title }}</h3>
+              {% if project.location %}<span>{{ project.location }}{% if project.year %}, {{ project.year }}{% endif %}</span>{% endif %}
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="muted">{% trans "Проекты появятся здесь." %}</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

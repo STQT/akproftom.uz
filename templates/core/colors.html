@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Цвета RAL" %} — {{ site.company_name }}{% endblock %}
+
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <h1>{% trans "Цвета RAL" %}</h1>
+    <p>{% trans "Продукция выпускается в широкой палитре цветов по каталогу RAL. Уточняйте наличие нужного цвета у менеджера." %}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% if colors %}
+      <div class="ral-grid">
+        {% for c in colors %}
+          <div class="ral" title="{{ c.code }} {{ c.name }}">
+            <span class="ral__swatch" style="background:{{ c.hex }}"></span>
+            <span class="ral__code">{{ c.code }}</span>
+            {% if c.name %}<span class="ral__name">{{ c.name }}</span>{% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="muted">{% trans "Палитра появится здесь." %}</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

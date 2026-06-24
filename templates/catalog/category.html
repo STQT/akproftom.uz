@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ category.name }} — {{ site.company_name }}{% endblock %}
+{% block meta_description %}{{ category.description|striptags|truncatewords:25 }}{% endblock %}
+
+{% block content %}
+{% include "includes/_breadcrumbs.html" %}
+
+<section class="page-head">
+  <div class="container">
+    <h1>{{ category.name }}</h1>
+    {% if category.description %}<p>{{ category.description }}</p>{% endif %}
+    {% if category.phone %}
+      <p class="page-head__phone">{% trans "Телефон направления:" %}
+        <a href="tel:{{ category.phone }}">{{ category.phone }}</a></p>
+    {% endif %}
+  </div>
+</section>
+
+{% if children %}
+<section class="section section--tight">
+  <div class="container">
+    <div class="subcats">
+      {% for child in children %}
+        <a class="chip" href="{{ child.get_absolute_url }}">{{ child.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section section--tight">
+  <div class="container">
+    {% if products %}
+      <div class="grid grid--products">
+        {% for product in products %}
+          {% include "includes/_product_card.html" %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="muted">{% trans "В этой категории пока нет товаров." %}</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Каталог продукции" %} — {{ site.company_name }}{% endblock %}
+
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <h1>{% trans "Каталог продукции" %}</h1>
+    <p>{% trans "Сэндвич-панели, профнастил, лист, арматура, штрипс, металлоконструкции и доборные элементы." %}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid--cats">
+      {% for category in categories %}
+        {% include "includes/_category_card.html" %}
+      {% empty %}
+        <p class="muted">{% trans "Каталог пока пуст." %}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

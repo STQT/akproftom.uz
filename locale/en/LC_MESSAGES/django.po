@@ -1,0 +1,454 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: akproftom\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "HEX"
+msgstr "HEX"
+
+msgid "HTML-код встраиваемой карты (Яндекс/Google)."
+msgstr "HTML code of the embedded map (Yandex/Google)."
+
+msgid "Instagram (Профнастил)"
+msgstr "Instagram (Corrugated steel sheet)"
+
+msgid "Instagram (Сэндвич-панель)"
+msgstr "Instagram (Sandwich panel)"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Адрес"
+msgstr "Address"
+
+msgid "Адрес:"
+msgstr "Address:"
+
+msgid "Активен"
+msgstr "Active"
+
+msgid "Активна"
+msgstr "Active"
+
+msgid "В этой категории пока нет товаров."
+msgstr "There are no products in this category yet."
+
+msgid "Ваше имя"
+msgstr "Your name"
+
+msgid "Весь каталог"
+msgstr "Full catalog"
+
+msgid "Все права защищены."
+msgstr "All rights reserved."
+
+msgid "Все проекты"
+msgstr "All projects"
+
+msgid "Все работы"
+msgstr "All work"
+
+msgid "Все товары"
+msgstr "All products"
+
+msgid "Высокая коррозионная стойкость"
+msgstr "High corrosion resistance"
+
+msgid "Главная"
+msgstr "Home"
+
+msgid "Главное изображение"
+msgstr "Main image"
+
+msgid "Год"
+msgstr "Year"
+
+msgid "Готовые технические решения узлов"
+msgstr "Ready-made technical assembly solutions"
+
+msgid "Длина панелей — от 0,5 до 12 м (по заказу)"
+msgstr "Panel length — from 0,5 to 12 m (made to order)"
+
+msgid "Доступные цвета"
+msgstr "Available colors"
+
+msgid "Доступные цвета (RAL):"
+msgstr "Available colors (RAL):"
+
+msgid "Закрыть"
+msgstr "Close"
+
+msgid "Замковые соединения Z-Lock / Roof-Lock"
+msgstr "Z-Lock / Roof-Lock locking joints"
+
+msgid "Замковые соединения: Z-Lock, Secret-fix, Roof-Lock"
+msgstr "Locking joints: Z-Lock, Secret-fix, Roof-Lock"
+
+msgid "Заполните форму — мы рассчитаем стоимость и свяжемся с вами."
+msgstr "Fill out the form — we'll calculate the cost and get in touch with you."
+
+msgid "Заявка"
+msgstr "Request"
+
+msgid "Заявки"
+msgstr "Requests"
+
+msgid "Значение"
+msgstr "Value"
+
+msgid "Изображение"
+msgstr "Image"
+
+msgid "Изображение проекта"
+msgstr "Project image"
+
+msgid "Изображение товара"
+msgstr "Product image"
+
+msgid "Изображения проекта"
+msgstr "Project images"
+
+msgid "Изображения товара"
+msgstr "Product images"
+
+msgid "Имя"
+msgstr "Name"
+
+msgid "Искать"
+msgstr "Search"
+
+msgid "Карта (iframe / embed)"
+msgstr "Map (iframe / embed)"
+
+msgid "Каталог"
+msgstr "Catalog"
+
+msgid "Каталог пока пуст."
+msgstr "The catalog is empty for now."
+
+msgid "Каталог продукции"
+msgstr "Product catalog"
+
+msgid "Категории"
+msgstr "Categories"
+
+msgid "Категории появятся здесь."
+msgstr "Categories will appear here."
+
+msgid "Категория"
+msgstr "Category"
+
+msgid "Код RAL"
+msgstr "RAL code"
+
+msgid "Контакты"
+msgstr "Contacts"
+
+msgid "Краткое описание"
+msgstr "Brief description"
+
+msgid "Меню"
+msgstr "Menu"
+
+msgid "Местоположение"
+msgstr "Location"
+
+msgid "Монтажная ширина полотна — 1000 мм"
+msgstr "Panel coverage width — 1000 mm"
+
+msgid "Нажимая кнопку, вы соглашаетесь на обработку персональных данных."
+msgstr "By clicking the button, you agree to the processing of personal data."
+
+msgid "Название"
+msgstr "Name"
+
+msgid "Название компании"
+msgstr "Company name"
+
+msgid "Найти"
+msgstr "Search"
+
+msgid "Направление / подпись"
+msgstr "Direction / caption"
+
+msgid "Например: +998 95 429-00-00"
+msgstr "For example: +998 95 429-00-00"
+
+msgid "Настройки сайта"
+msgstr "Site settings"
+
+msgid "Наши работы"
+msgstr "Our work"
+
+msgid "Ничего не найдено. Попробуйте изменить запрос или"
+msgstr "Nothing found. Try changing your query or"
+
+msgid "Номер"
+msgstr "Number"
+
+msgid "Нужен расчёт стоимости?"
+msgstr "Need a cost estimate?"
+
+msgid "О компании"
+msgstr "About us"
+
+msgid "ООО «TASHKENT PROFNASTIL SERVIS» — современное промышленное предприятие, основанное в 2017 году, занятое в сфере заготовительного производства, металлоконструкций, сэндвич-панелей, а также гранитных и мраморных плит для отраслей промышленного и жилищного строительства, общественных зданий и сооружений."
+msgstr "TASHKENT PROFNASTIL SERVIS LLC is a modern industrial enterprise founded in 2017, engaged in blank-stock production, metal structures, sandwich panels, as well as granite and marble slabs for the industrial and residential construction, public buildings and structures sectors."
+
+msgid "ООО «TASHKENT PROFNASTIL SERVIS» — современное промышленное предприятие, основанное в 2017 году. Заготовительное производство, металлоконструкции, сэндвич-панели, а также гранитные и мраморные плиты для промышленного и жилищного строительства."
+msgstr "TASHKENT PROFNASTIL SERVIS LLC is a modern industrial enterprise founded in 2017. Blank-stock production, metal structures, sandwich panels, as well as granite and marble slabs for industrial and residential construction."
+
+msgid "Обложка"
+msgstr "Cover"
+
+msgid "Обработана"
+msgstr "Processed"
+
+msgid "Описание"
+msgstr "Description"
+
+msgid "Оставить заявку"
+msgstr "Submit a request"
+
+msgid "Оставьте заявку — подберём продукцию под ваш проект и рассчитаем цену с доставкой по Узбекистану."
+msgstr "Submit a request — we'll select products for your project and calculate the price with delivery across Uzbekistan."
+
+msgid "Открыть каталог"
+msgstr "Open catalog"
+
+msgid "Отправить заявку"
+msgstr "Send request"
+
+msgid "Палитра появится здесь."
+msgstr "The palette will appear here."
+
+msgid "Панели изготавливаются непрерывным способом на автоматической линии, обеспечивающей полный контроль над производством и стабильно высокое качество. Управление осуществляется компьютерным процессором в режиме реального времени, что сводит к минимуму человеческий фактор."
+msgstr "The panels are manufactured continuously on an automated line that ensures full control over production and consistently high quality. The process is managed by a computer processor in real time, minimizing the human factor."
+
+msgid "По запросу «%(query)s»"
+msgstr "For “%(query)s”"
+
+msgid "Подпись"
+msgstr "Signature"
+
+msgid "Подробнее"
+msgstr "Learn more"
+
+msgid "Подробнее о нас"
+msgstr "Learn more about us"
+
+msgid "Поиск"
+msgstr "Search"
+
+msgid "Поиск по каталогу..."
+msgstr "Search the catalog..."
+
+msgid "Поиск..."
+msgstr "Search..."
+
+msgid "Полная заводская готовность"
+msgstr "Full factory readiness"
+
+msgid "Получить расчёт"
+msgstr "Get a quote"
+
+msgid "Популярная продукция"
+msgstr "Popular products"
+
+msgid "Порядок"
+msgstr "Order"
+
+msgid "Похожие товары"
+msgstr "Similar products"
+
+msgid "Предприятие располагает современной технологической линией от компании Dai San Industrial Co. Ltd (Южная Корея) на площадях 4500 м². Мощность производства — более 1 млн м² кровельных и стеновых сэндвич-панелей с утеплителем из минеральной ваты в год."
+msgstr "The plant is equipped with a modern production line from Dai San Industrial Co. Ltd (South Korea) on 4500 m². Production capacity is over 1 million m² of roofing and wall sandwich panels with mineral wool insulation per year."
+
+msgid "Проверьте правильность заполнения формы."
+msgstr "Please check that the form is filled out correctly."
+
+msgid "Продукция выпускается в широкой палитре цветов по каталогу RAL. Уточняйте наличие нужного цвета у менеджера."
+msgstr "Products are available in a wide range of colors from the RAL catalog. Check the availability of the color you need with a manager."
+
+msgid "Продукция сертифицирована по национальным стандартам Республики Узбекистан и ГОСТ."
+msgstr "Products are certified to the national standards of the Republic of Uzbekistan and GOST."
+
+msgid "Проект"
+msgstr "Project"
+
+msgid "Проекты появятся здесь."
+msgstr "Projects will appear here."
+
+msgid "Производительность линии — до 12 м/мин"
+msgstr "Line capacity is up to 12 m/min"
+
+msgid "Производственная линия от Dai San Industrial Co. Ltd (Южная Корея) отвечает мировым стандартам качества кровельных и стеновых сэндвич-панелей."
+msgstr "The production line from Dai San Industrial Co. Ltd (South Korea) meets global quality standards for roofing and wall sandwich panels."
+
+msgid "Производство и продажа сэндвич-панелей, профнастила, металлоконструкций в Ташкенте."
+msgstr "Manufacturing and sale of sandwich panels, corrugated steel sheet, and metal structures in Tashkent."
+
+msgid "Производство кровельных и стеновых сэндвич-панелей, профнастила, металлоконструкций и проката в Ташкенте с 2017 года."
+msgstr "Manufacturing of roofing and wall sandwich panels, corrugated steel sheet, metal structures, and rolled steel in Tashkent since 2017."
+
+msgid "Производство с 2017 года · Ташкент"
+msgstr "In production since 2017 · Tashkent"
+
+msgid "Разделы"
+msgstr "Sections"
+
+msgid "Рассчитать стоимость"
+msgstr "Calculate the cost"
+
+msgid "Реализованные объекты: производственные, складские и торговые здания, металлоконструкции и кровли."
+msgstr "Completed projects: production, warehouse and retail buildings, metal structures and roofing."
+
+msgid "Результаты поиска"
+msgstr "Search results"
+
+msgid "Рекомендуемый"
+msgstr "Recommended"
+
+msgid "Родительская категория"
+msgstr "Parent category"
+
+msgid "Свяжитесь с нужным направлением или оставьте заявку — мы перезвоним."
+msgstr "Get in touch with the right department or submit a request — we'll call you back."
+
+msgid "Сертификат"
+msgstr "Certificate"
+
+msgid "Сертификаты"
+msgstr "Certificates"
+
+msgid "Сертификаты появятся здесь."
+msgstr "Certificates will appear here."
+
+msgid "Слаг"
+msgstr "Slug"
+
+msgid "Смотреть"
+msgstr "View"
+
+msgid "Собственное производство кровельных и стеновых сэндвич-панелей на линии Dai San (Корея). Профнастил, лист, арматура, штрипс и доборные элементы — со склада и под заказ."
+msgstr "In-house production of roofing and wall sandwich panels on a Dai San (Korea) line. Corrugated steel sheet, sheet, rebar, steel strip and trim accessories — from stock and made to order."
+
+msgid "Создана"
+msgstr "Created"
+
+msgid "Сообщение"
+msgstr "Message"
+
+msgid "Сообщение (необязательно)"
+msgstr "Message (optional)"
+
+msgid "Спасибо! Ваша заявка отправлена."
+msgstr "Thank you! Your request has been sent."
+
+msgid "Спасибо! Ваша заявка отправлена. Мы свяжемся с вами."
+msgstr "Thank you! Your request has been sent. We will contact you."
+
+msgid "Страница"
+msgstr "Page"
+
+msgid "Сэндвич-панели, профнастил и металлоконструкции"
+msgstr "Sandwich panels, corrugated steel sheet and metal structures"
+
+msgid "Сэндвич-панели, профнастил, лист, арматура, штрипс, металлоконструкции и доборные элементы."
+msgstr "Sandwich panels, corrugated steel sheet, sheet, rebar, steel strip, metal structures and trim accessories."
+
+msgid "Телефон"
+msgstr "Phone"
+
+msgid "Телефон направления"
+msgstr "Department phone"
+
+msgid "Телефон направления:"
+msgstr "Department phone:"
+
+msgid "Телефоны"
+msgstr "Phones"
+
+msgid "Телефоны по направлениям"
+msgstr "Phones by department"
+
+msgid "Технологический процесс"
+msgstr "Manufacturing process"
+
+msgid "Товар"
+msgstr "Product"
+
+msgid "Товары"
+msgstr "Products"
+
+msgid "Толщина полотна — от 50 до 125 мм"
+msgstr "Core thickness — from 50 to 125 mm"
+
+msgid "Узнать цену"
+msgstr "Get the price"
+
+msgid "Файл (PDF)"
+msgstr "File (PDF)"
+
+msgid "Характеристика"
+msgstr "Specification"
+
+msgid "Характеристики"
+msgstr "Specifications"
+
+msgid "Цвет (RAL)"
+msgstr "Color (RAL)"
+
+msgid "Цвета (RAL)"
+msgstr "Colors (RAL)"
+
+msgid "Цвета RAL"
+msgstr "RAL colors"
+
+msgid "Цена"
+msgstr "Price"
+
+msgid "Часы работы"
+msgstr "Working hours"
+
+msgid "Часы работы:"
+msgstr "Working hours:"
+
+msgid "Энергосберегающие характеристики"
+msgstr "Energy-saving specifications"
+
+msgid "год основания"
+msgstr "year founded"
+
+msgid "линия (Южная Корея)"
+msgstr "line (South Korea)"
+
+msgid "м²"
+msgstr "m²"
+
+msgid "м² панелей в год"
+msgstr "m² of panels per year"
+
+msgid "м² производство"
+msgstr "m² of production"
+
+msgid "млн"
+msgstr "mln"
+
+msgid "открыть каталог"
+msgstr "Open catalog"
+
+msgid "панелей в год"
+msgstr "panels per year"
+
+msgid "производственные площади"
+msgstr "production area"
+
+msgid "сэндвич-панели, профнастил, металлоконструкции в Ташкенте"
+msgstr "sandwich panels, corrugated steel sheet, metal structures in Tashkent"

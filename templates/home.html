@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ site.company_name }} — {% trans "сэндвич-панели, профнастил, металлоконструкции в Ташкенте" %}{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="hero__eyebrow">{% trans "Производство с 2017 года · Ташкент" %}</span>
+      <h1 class="hero__title">{% trans "Сэндвич-панели, профнастил и металлоконструкции" %}</h1>
+      <p class="hero__lead">{% trans "Собственное производство кровельных и стеновых сэндвич-панелей на линии Dai San (Корея). Профнастил, лист, арматура, штрипс и доборные элементы — со склада и под заказ." %}</p>
+      <div class="hero__actions">
+        <a class="btn btn--accent btn--lg" href="{% url 'catalog:index' %}">{% trans "Открыть каталог" %}</a>
+        <button class="btn btn--ghost btn--lg js-open-modal" type="button">{% trans "Получить расчёт" %}</button>
+      </div>
+      <ul class="hero__stats">
+        <li><b>1 {% trans "млн" %}</b><span>{% trans "м² панелей в год" %}</span></li>
+        <li><b>4500</b><span>{% trans "м² производство" %}</span></li>
+        <li><b>2017</b><span>{% trans "год основания" %}</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">{% trans "Каталог продукции" %}</h2>
+      <a class="section__link" href="{% url 'catalog:index' %}">{% trans "Весь каталог" %} →</a>
+    </div>
+    <div class="grid grid--cats">
+      {% for category in categories %}
+        {% include "includes/_category_card.html" %}
+      {% empty %}
+        <p class="muted">{% trans "Категории появятся здесь." %}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- About teaser -->
+<section class="section section--alt">
+  <div class="container about-teaser">
+    <div class="about-teaser__text">
+      <h2 class="section__title">{% trans "О компании" %}</h2>
+      <p>{% trans "ООО «TASHKENT PROFNASTIL SERVIS» — современное промышленное предприятие, основанное в 2017 году. Заготовительное производство, металлоконструкции, сэндвич-панели, а также гранитные и мраморные плиты для промышленного и жилищного строительства." %}</p>
+      <p>{% trans "Производственная линия от Dai San Industrial Co. Ltd (Южная Корея) отвечает мировым стандартам качества кровельных и стеновых сэндвич-панелей." %}</p>
+      <div class="about-teaser__actions">
+        <a class="btn btn--outline" href="{% url 'core:about' %}">{% trans "Подробнее о нас" %}</a>
+        <a class="btn btn--outline" href="{% url 'core:certificates' %}">{% trans "Сертификаты" %}</a>
+      </div>
+    </div>
+    <ul class="about-teaser__features">
+      <li>✔ {% trans "Полная заводская готовность" %}</li>
+      <li>✔ {% trans "Энергосберегающие характеристики" %}</li>
+      <li>✔ {% trans "Высокая коррозионная стойкость" %}</li>
+      <li>✔ {% trans "Замковые соединения Z-Lock / Roof-Lock" %}</li>
+      <li>✔ {% trans "Готовые технические решения узлов" %}</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Featured products -->
+{% if featured_products %}
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">{% trans "Популярная продукция" %}</h2>
+      <a class="section__link" href="{% url 'catalog:index' %}">{% trans "Все товары" %} →</a>
+    </div>
+    <div class="grid grid--products">
+      {% for product in featured_products %}
+        {% include "includes/_product_card.html" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Projects -->
+{% if projects %}
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">{% trans "Наши работы" %}</h2>
+      <a class="section__link" href="{% url 'projects:list' %}">{% trans "Все проекты" %} →</a>
+    </div>
+    <div class="grid grid--projects">
+      {% for project in projects %}
+        <a class="project-card" href="{{ project.get_absolute_url }}">
+          <div class="project-card__media">
+            {% if project.cover %}<img src="{{ project.cover.url }}" alt="{{ project.title }}" loading="lazy">{% endif %}
+          </div>
+          <div class="project-card__body">
+            <h3>{{ project.title }}</h3>
+            {% if project.location %}<span>{{ project.location }}{% if project.year %}, {{ project.year }}{% endif %}</span>{% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- CTA + form -->
+<section class="section cta">
+  <div class="container cta__inner">
+    <div class="cta__text">
+      <h2>{% trans "Нужен расчёт стоимости?" %}</h2>
+      <p>{% trans "Оставьте заявку — подберём продукцию под ваш проект и рассчитаем цену с доставкой по Узбекистану." %}</p>
+      <ul class="cta__phones">
+        {% for p in phones %}
+          <li><a href="{{ p.tel_href }}">{{ p.number }}</a>{% if p.label %} <span>— {{ p.label }}</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="cta__form card-surface">
+      {% include "includes/_inquiry_form.html" %}
+    </div>
+  </div>
+</section>
+{% endblock %}

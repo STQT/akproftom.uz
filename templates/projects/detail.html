@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ project.title }} — {{ site.company_name }}{% endblock %}
+
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <a class="back-link" href="{% url 'projects:list' %}">← {% trans "Все работы" %}</a>
+    <h1>{{ project.title }}</h1>
+    {% if project.location %}<p class="page-head__meta">{{ project.location }}{% if project.year %}, {{ project.year }}{% endif %}</p>{% endif %}
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    {% if project.cover %}
+      <div class="project-detail__cover">
+        <img src="{{ project.cover.url }}" alt="{{ project.title }}">
+      </div>
+    {% endif %}
+    {% if project.description %}
+      <div class="prose">{{ project.description|linebreaks }}</div>
+    {% endif %}
+    {% if gallery %}
+      <div class="gallery js-gallery">
+        {% for img in gallery %}
+          <a class="gallery__item" href="{{ img.image.url }}">
+            <img src="{{ img.image.url }}" alt="{{ img.alt|default:project.title }}" loading="lazy">
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

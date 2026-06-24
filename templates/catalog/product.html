@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ product.name }} — {{ site.company_name }}{% endblock %}
+{% block meta_description %}{{ product.short_description|default:product.name }}{% endblock %}
+
+{% block content %}
+{% include "includes/_breadcrumbs.html" %}
+
+<section class="section section--tight">
+  <div class="container product">
+    <!-- Gallery -->
+    <div class="product__gallery">
+      <div class="product__main">
+        {% if product.main_image %}
+          <img id="product-main-img" src="{{ product.main_image.url }}" alt="{{ product.name }}">
+        {% elif gallery %}
+          <img id="product-main-img" src="{{ gallery.0.image.url }}" alt="{{ product.name }}">
+        {% else %}
+          <div class="product__noimg">{{ product.name|first }}</div>
+        {% endif %}
+      </div>
+      {% if gallery %}
+      <div class="product__thumbs">
+        {% if product.main_image %}
+          <button class="thumb is-active" data-img="{{ product.main_image.url }}">
+            <img src="{{ product.main_image.url }}" alt="{{ product.name }}"></button>
+        {% endif %}
+        {% for img in gallery %}
+          <button class="thumb" data-img="{{ img.image.url }}">
+            <img src="{{ img.image.url }}" alt="{{ img.alt|default:product.name }}"></button>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Info -->
+    <div class="product__info">
+      <span class="product__cat">{{ product.category.name }}</span>
+      <h1 class="product__title">{{ product.name }}</h1>
+      {% if product.short_description %}<p class="product__lead">{{ product.short_description }}</p>{% endif %}
+
+      {% if colors %}
+      <div class="product__colors">
+        <span class="product__colors-label">{% trans "Доступные цвета (RAL):" %}</span>
+        <div class="swatches">
+          {% for c in colors %}
+            <span class="swatch" style="background:{{ c.hex }}" title="{{ c.code }} {{ c.name }}"></span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="product__cta">
+        <button type="button" class="btn btn--accent btn--lg js-open-modal" data-product="{{ product.id }}">{% trans "Узнать цену" %}</button>
+        <a class="btn btn--outline btn--lg" href="{% url 'core:contacts' %}">{% trans "Контакты" %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Specs + description -->
+<section class="section section--tight">
+  <div class="container product-details">
+    <div class="product-details__main">
+      {% if specs %}
+      <h2 class="block-title">{% trans "Характеристики" %}</h2>
+      <table class="specs">
+        <tbody>
+          {% for s in specs %}
+          <tr><th>{{ s.name }}</th><td>{{ s.value }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
+
+      {% if product.description %}
+      <h2 class="block-title">{% trans "Описание" %}</h2>
+      <div class="prose">{{ product.description|linebreaks }}</div>
+      {% endif %}
+    </div>
+
+    <aside class="product-details__aside">
+      <div class="card-surface">
+        {% translate "Рассчитать стоимость" as t_title %}
+        {% include "includes/_inquiry_form.html" with form_title=t_title %}
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- Related -->
+{% if related %}
+<section class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">{% trans "Похожие товары" %}</h2>
+    <div class="grid grid--products">
+      {% for product in related %}
+        {% include "includes/_product_card.html" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

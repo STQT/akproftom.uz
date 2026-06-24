@@ -1,0 +1,16 @@
+{% load i18n %}
+<nav class="breadcrumbs" aria-label="breadcrumb">
+  <div class="container">
+    <a href="{% url 'core:home' %}">{% trans "Главная" %}</a>
+    <span class="breadcrumbs__sep">/</span>
+    <a href="{% url 'catalog:index' %}">{% trans "Каталог" %}</a>
+    {% for label, url in breadcrumbs %}
+      <span class="breadcrumbs__sep">/</span>
+      {% if url and not forloop.last %}
+        <a href="{{ url }}">{{ label }}</a>
+      {% else %}
+        <span class="breadcrumbs__current">{{ label }}</span>
+      {% endif %}
+    {% endfor %}
+  </div>
+</nav>

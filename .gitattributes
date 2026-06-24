@@ -1,0 +1,15 @@
+# Normalize text files to LF in the repo (the server runs Linux/cPanel).
+* text=auto eol=lf
+
+# Binary assets — never normalize.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.mo   binary
+*.p12  binary
+
+# Keep SVG as LF text.
+*.svg  text eol=lf

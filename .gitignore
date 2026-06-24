@@ -1,0 +1,43 @@
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ── Django ──────────────────────────────────────────────
+db.sqlite3
+db.sqlite3-journal
+staticfiles/
+/media/
+*.log
+
+# ── Secrets / credentials (NEVER commit) ────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.ppk
+*.key
+id_rsa*
+id_ed25519*
+*_rsa
+*.p12
+
+# ── OS / editors ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ── Build / exploration artifacts ───────────────────────
+assets/_imgs/
+assets/_catalog_text.txt
+scratch_*
+*.pot
+
+# Committed on purpose: locale/ (.po/.mo), locale_content.json, tools/, seed_assets/

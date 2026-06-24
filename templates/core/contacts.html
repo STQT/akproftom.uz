@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Контакты" %} — {{ site.company_name }}{% endblock %}
+
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <h1>{% trans "Контакты" %}</h1>
+    <p>{% trans "Свяжитесь с нужным направлением или оставьте заявку — мы перезвоним." %}</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container contacts">
+    <div class="contacts__info">
+      <h2 class="block-title">{% trans "Телефоны по направлениям" %}</h2>
+      <ul class="contacts__phones">
+        {% for p in phones %}
+          <li>
+            <a href="{{ p.tel_href }}">{{ p.number }}</a>
+            {% if p.label %}<span class="contacts__label">{{ p.label }}</span>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+
+      <ul class="contacts__meta">
+        {% if site.address %}<li><b>{% trans "Адрес:" %}</b> {{ site.address }}</li>{% endif %}
+        {% if site.work_hours %}<li><b>{% trans "Часы работы:" %}</b> {{ site.work_hours }}</li>{% endif %}
+        {% if site.email %}<li><b>E-mail:</b> <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
+      </ul>
+
+      <div class="contacts__socials">
+        {% if site.telegram %}<a class="btn btn--outline btn--sm" href="{{ site.telegram }}" target="_blank" rel="noopener">Telegram</a>{% endif %}
+        {% if site.instagram %}<a class="btn btn--outline btn--sm" href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+        {% if site.instagram2 %}<a class="btn btn--outline btn--sm" href="{{ site.instagram2 }}" target="_blank" rel="noopener">Instagram 2</a>{% endif %}
+      </div>
+    </div>
+
+    <div class="contacts__form card-surface">
+      {% translate "Оставить заявку" as t_title %}
+      {% include "includes/_inquiry_form.html" with form_title=t_title %}
+    </div>
+  </div>
+
+  {% if site.map_embed %}
+  <div class="container">
+    <div class="map">{{ site.map_embed|safe }}</div>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

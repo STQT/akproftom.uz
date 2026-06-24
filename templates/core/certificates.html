@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Сертификаты" %} — {{ site.company_name }}{% endblock %}
+
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <h1>{% trans "Сертификаты" %}</h1>
+    <p>{% trans "Продукция сертифицирована по национальным стандартам Республики Узбекистан и ГОСТ." %}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% translate "Сертификат" as t_cert %}
+    {% if certificates %}
+      <div class="gallery gallery--certs js-gallery">
+        {% for c in certificates %}
+          <a class="gallery__item" href="{{ c.image.url }}">
+            <img src="{{ c.image.url }}" alt="{{ c.title|default:t_cert }}" loading="lazy">
+            {% if c.title %}<span class="gallery__cap">{{ c.title }}</span>{% endif %}
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="muted">{% trans "Сертификаты появятся здесь." %}</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "О компании" %} — {{ site.company_name }}{% endblock %}
+
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <h1>{% trans "О компании" %}</h1>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container prose-wide">
+    {% if site.about_text %}
+      <div class="prose">{{ site.about_text|linebreaks }}</div>
+    {% else %}
+      <p>{% trans "ООО «TASHKENT PROFNASTIL SERVIS» — современное промышленное предприятие, основанное в 2017 году, занятое в сфере заготовительного производства, металлоконструкций, сэндвич-панелей, а также гранитных и мраморных плит для отраслей промышленного и жилищного строительства, общественных зданий и сооружений." %}</p>
+      <p>{% trans "Предприятие располагает современной технологической линией от компании Dai San Industrial Co. Ltd (Южная Корея) на площадях 4500 м². Мощность производства — более 1 млн м² кровельных и стеновых сэндвич-панелей с утеплителем из минеральной ваты в год." %}</p>
+    {% endif %}
+
+    <div class="stats-row">
+      <div class="stat"><b>2017</b><span>{% trans "год основания" %}</span></div>
+      <div class="stat"><b>4500 {% trans "м²" %}</b><span>{% trans "производственные площади" %}</span></div>
+      <div class="stat"><b>1 {% trans "млн" %} {% trans "м²" %}</b><span>{% trans "панелей в год" %}</span></div>
+      <div class="stat"><b>Dai San</b><span>{% trans "линия (Южная Корея)" %}</span></div>
+    </div>
+
+    <h2 class="block-title">{% trans "Технологический процесс" %}</h2>
+    {% if site.process_text %}
+      <div class="prose">{{ site.process_text|linebreaks }}</div>
+    {% else %}
+      <p>{% trans "Панели изготавливаются непрерывным способом на автоматической линии, обеспечивающей полный контроль над производством и стабильно высокое качество. Управление осуществляется компьютерным процессором в режиме реального времени, что сводит к минимуму человеческий фактор." %}</p>
+      <ul class="check-list">
+        <li>{% trans "Производительность линии — до 12 м/мин" %}</li>
+        <li>{% trans "Монтажная ширина полотна — 1000 мм" %}</li>
+        <li>{% trans "Толщина полотна — от 50 до 125 мм" %}</li>
+        <li>{% trans "Длина панелей — от 0,5 до 12 м (по заказу)" %}</li>
+        <li>{% trans "Замковые соединения: Z-Lock, Secret-fix, Roof-Lock" %}</li>
+      </ul>
+    {% endif %}
+  </div>
+</section>
+
+{% if certificates %}
+<section class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">{% trans "Сертификаты" %}</h2>
+    {% translate "Сертификат" as t_cert %}
+    <div class="cert-strip">
+      {% for c in certificates %}
+        <a class="cert" href="{{ c.image.url }}" target="_blank" rel="noopener">
+          <img src="{{ c.image.url }}" alt="{{ c.title|default:t_cert }}" loading="lazy">
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

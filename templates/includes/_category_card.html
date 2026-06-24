@@ -1,0 +1,19 @@
+{% load i18n %}
+<a class="cat-card" href="{{ category.get_absolute_url }}">
+  <div class="cat-card__media">
+    {% if category.image %}
+      <img src="{{ category.image.url }}" alt="{{ category.name }}" loading="lazy">
+    {% else %}
+      <span class="cat-card__placeholder">{{ category.name|first }}</span>
+    {% endif %}
+  </div>
+  <div class="cat-card__body">
+    <h3 class="cat-card__title">{{ category.name }}</h3>
+    {% if category.children.all %}
+      <span class="cat-card__sub">
+        {% for child in category.children.all %}{{ child.name }}{% if not forloop.last %} · {% endif %}{% endfor %}
+      </span>
+    {% endif %}
+    <span class="cat-card__more">{% trans "Смотреть" %} →</span>
+  </div>
+</a>

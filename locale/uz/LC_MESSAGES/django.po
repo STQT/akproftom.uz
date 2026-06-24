@@ -1,0 +1,454 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: akproftom\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uz\n"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "HEX"
+msgstr "HEX"
+
+msgid "HTML-код встраиваемой карты (Яндекс/Google)."
+msgstr "O'rnatiladigan xarita HTML-kodi (Yandex/Google)."
+
+msgid "Instagram (Профнастил)"
+msgstr "Instagram (Profnastil)"
+
+msgid "Instagram (Сэндвич-панель)"
+msgstr "Instagram (Sendvich-panel)"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Адрес"
+msgstr "Manzil"
+
+msgid "Адрес:"
+msgstr "Manzil:"
+
+msgid "Активен"
+msgstr "Faol"
+
+msgid "Активна"
+msgstr "Faol"
+
+msgid "В этой категории пока нет товаров."
+msgstr "Bu toifada hozircha mahsulotlar yo'q."
+
+msgid "Ваше имя"
+msgstr "Ismingiz"
+
+msgid "Весь каталог"
+msgstr "Butun katalog"
+
+msgid "Все права защищены."
+msgstr "Barcha huquqlar himoyalangan."
+
+msgid "Все проекты"
+msgstr "Barcha loyihalar"
+
+msgid "Все работы"
+msgstr "Barcha ishlar"
+
+msgid "Все товары"
+msgstr "Barcha mahsulotlar"
+
+msgid "Высокая коррозионная стойкость"
+msgstr "Yuqori korroziyaga chidamlilik"
+
+msgid "Главная"
+msgstr "Bosh sahifa"
+
+msgid "Главное изображение"
+msgstr "Asosiy rasm"
+
+msgid "Год"
+msgstr "Yil"
+
+msgid "Готовые технические решения узлов"
+msgstr "Tugunlar uchun tayyor texnik yechimlar"
+
+msgid "Длина панелей — от 0,5 до 12 м (по заказу)"
+msgstr "Panellar uzunligi — 0,5 dan 12 m gacha (buyurtma asosida)"
+
+msgid "Доступные цвета"
+msgstr "Mavjud ranglar"
+
+msgid "Доступные цвета (RAL):"
+msgstr "Mavjud ranglar (RAL):"
+
+msgid "Закрыть"
+msgstr "Yopish"
+
+msgid "Замковые соединения Z-Lock / Roof-Lock"
+msgstr "Qulf birikmalari Z-Lock / Roof-Lock"
+
+msgid "Замковые соединения: Z-Lock, Secret-fix, Roof-Lock"
+msgstr "Qulf birikmalari: Z-Lock, Secret-fix, Roof-Lock"
+
+msgid "Заполните форму — мы рассчитаем стоимость и свяжемся с вами."
+msgstr "Formani to'ldiring — biz narxni hisoblab, siz bilan bog'lanamiz."
+
+msgid "Заявка"
+msgstr "Buyurtma"
+
+msgid "Заявки"
+msgstr "Buyurtmalar"
+
+msgid "Значение"
+msgstr "Qiymat"
+
+msgid "Изображение"
+msgstr "Rasm"
+
+msgid "Изображение проекта"
+msgstr "Loyiha rasmi"
+
+msgid "Изображение товара"
+msgstr "Mahsulot rasmi"
+
+msgid "Изображения проекта"
+msgstr "Loyiha rasmlari"
+
+msgid "Изображения товара"
+msgstr "Mahsulot rasmlari"
+
+msgid "Имя"
+msgstr "Ism"
+
+msgid "Искать"
+msgstr "Qidirish"
+
+msgid "Карта (iframe / embed)"
+msgstr "Xarita (iframe / embed)"
+
+msgid "Каталог"
+msgstr "Katalog"
+
+msgid "Каталог пока пуст."
+msgstr "Katalog hozircha bo'sh."
+
+msgid "Каталог продукции"
+msgstr "Mahsulotlar katalogi"
+
+msgid "Категории"
+msgstr "Toifalar"
+
+msgid "Категории появятся здесь."
+msgstr "Toifalar shu yerda paydo bo'ladi."
+
+msgid "Категория"
+msgstr "Toifa"
+
+msgid "Код RAL"
+msgstr "RAL kodi"
+
+msgid "Контакты"
+msgstr "Aloqa"
+
+msgid "Краткое описание"
+msgstr "Qisqacha tavsif"
+
+msgid "Меню"
+msgstr "Menyu"
+
+msgid "Местоположение"
+msgstr "Joylashuv"
+
+msgid "Монтажная ширина полотна — 1000 мм"
+msgstr "Panel montaj kengligi — 1000 mm"
+
+msgid "Нажимая кнопку, вы соглашаетесь на обработку персональных данных."
+msgstr "Tugmani bosish orqali siz shaxsiy ma'lumotlaringizni qayta ishlashga rozilik bildirasiz."
+
+msgid "Название"
+msgstr "Nomi"
+
+msgid "Название компании"
+msgstr "Kompaniya nomi"
+
+msgid "Найти"
+msgstr "Qidirish"
+
+msgid "Направление / подпись"
+msgstr "Yo'nalish / izoh"
+
+msgid "Например: +998 95 429-00-00"
+msgstr "Masalan: +998 95 429-00-00"
+
+msgid "Настройки сайта"
+msgstr "Sayt sozlamalari"
+
+msgid "Наши работы"
+msgstr "Ishlarimiz"
+
+msgid "Ничего не найдено. Попробуйте изменить запрос или"
+msgstr "Hech narsa topilmadi. So'rovni o'zgartirib ko'ring yoki"
+
+msgid "Номер"
+msgstr "Raqami"
+
+msgid "Нужен расчёт стоимости?"
+msgstr "Narxni hisoblash kerakmi?"
+
+msgid "О компании"
+msgstr "Kompaniya haqida"
+
+msgid "ООО «TASHKENT PROFNASTIL SERVIS» — современное промышленное предприятие, основанное в 2017 году, занятое в сфере заготовительного производства, металлоконструкций, сэндвич-панелей, а также гранитных и мраморных плит для отраслей промышленного и жилищного строительства, общественных зданий и сооружений."
+msgstr "«TASHKENT PROFNASTIL SERVIS» MChJ — 2017-yilda tashkil etilgan zamonaviy sanoat korxonasi bo'lib, sanoat va turar-joy qurilishi, jamoat binolari va inshootlari tarmoqlari uchun zagotovka ishlab chiqarish, metall konstruksiyalar, sendvich-panellar, shuningdek granit va marmar plitalar ishlab chiqarish bilan shug'ullanadi."
+
+msgid "ООО «TASHKENT PROFNASTIL SERVIS» — современное промышленное предприятие, основанное в 2017 году. Заготовительное производство, металлоконструкции, сэндвич-панели, а также гранитные и мраморные плиты для промышленного и жилищного строительства."
+msgstr "«TASHKENT PROFNASTIL SERVIS» MChJ — 2017-yilda tashkil etilgan zamonaviy sanoat korxonasi. Zagotovka ishlab chiqarish, metall konstruksiyalar, sendvich-panellar, shuningdek sanoat va turar-joy qurilishi uchun granit va marmar plitalar."
+
+msgid "Обложка"
+msgstr "Muqova"
+
+msgid "Обработана"
+msgstr "Qayta ishlangan"
+
+msgid "Описание"
+msgstr "Tavsif"
+
+msgid "Оставить заявку"
+msgstr "Buyurtma qoldirish"
+
+msgid "Оставьте заявку — подберём продукцию под ваш проект и рассчитаем цену с доставкой по Узбекистану."
+msgstr "Buyurtma qoldiring — loyihangizga mos mahsulotni tanlaymiz va O'zbekiston bo'ylab yetkazib berish bilan narxni hisoblab beramiz."
+
+msgid "Открыть каталог"
+msgstr "Katalogni ochish"
+
+msgid "Отправить заявку"
+msgstr "Buyurtmani yuborish"
+
+msgid "Палитра появится здесь."
+msgstr "Palitra shu yerda paydo bo'ladi."
+
+msgid "Панели изготавливаются непрерывным способом на автоматической линии, обеспечивающей полный контроль над производством и стабильно высокое качество. Управление осуществляется компьютерным процессором в режиме реального времени, что сводит к минимуму человеческий фактор."
+msgstr "Panellar ishlab chiqarish ustidan to'liq nazoratni va barqaror yuqori sifatni ta'minlaydigan avtomatik liniyada uzluksiz usulda ishlab chiqariladi. Boshqaruv real vaqt rejimida kompyuter protsessori orqali amalga oshiriladi, bu esa inson omilini minimumga keltiradi."
+
+msgid "По запросу «%(query)s»"
+msgstr "«%(query)s» so‘rovi bo‘yicha"
+
+msgid "Подпись"
+msgstr "Imzo"
+
+msgid "Подробнее"
+msgstr "Batafsil"
+
+msgid "Подробнее о нас"
+msgstr "Biz haqimizda batafsil"
+
+msgid "Поиск"
+msgstr "Qidiruv"
+
+msgid "Поиск по каталогу..."
+msgstr "Katalogdan qidirish..."
+
+msgid "Поиск..."
+msgstr "Qidiruv..."
+
+msgid "Полная заводская готовность"
+msgstr "To'liq zavod tayyorligi"
+
+msgid "Получить расчёт"
+msgstr "Hisob-kitobni olish"
+
+msgid "Популярная продукция"
+msgstr "Ommabop mahsulotlar"
+
+msgid "Порядок"
+msgstr "Tartib"
+
+msgid "Похожие товары"
+msgstr "O'xshash mahsulotlar"
+
+msgid "Предприятие располагает современной технологической линией от компании Dai San Industrial Co. Ltd (Южная Корея) на площадях 4500 м². Мощность производства — более 1 млн м² кровельных и стеновых сэндвич-панелей с утеплителем из минеральной ваты в год."
+msgstr "Korxona 4500 m² maydonda Dai San Industrial Co. Ltd (Janubiy Koreya) kompaniyasining zamonaviy texnologik liniyasiga ega. Ishlab chiqarish quvvati — yiliga 1 mln m² dan ortiq mineral paxtadan issiqlik izolyatsiyali tom yopish uchun va devor uchun sendvich-panellar."
+
+msgid "Проверьте правильность заполнения формы."
+msgstr "Forma to'g'ri to'ldirilganligini tekshiring."
+
+msgid "Продукция выпускается в широкой палитре цветов по каталогу RAL. Уточняйте наличие нужного цвета у менеджера."
+msgstr "Mahsulotlar RAL katalogi bo'yicha keng rang palitrasida ishlab chiqariladi. Kerakli rang mavjudligini menejerdan aniqlang."
+
+msgid "Продукция сертифицирована по национальным стандартам Республики Узбекистан и ГОСТ."
+msgstr "Mahsulotlar O'zbekiston Respublikasining milliy standartlari va GOST bo'yicha sertifikatlangan."
+
+msgid "Проект"
+msgstr "Loyiha"
+
+msgid "Проекты появятся здесь."
+msgstr "Loyihalar shu yerda paydo bo'ladi."
+
+msgid "Производительность линии — до 12 м/мин"
+msgstr "Liniya unumdorligi — 12 m/min gacha"
+
+msgid "Производственная линия от Dai San Industrial Co. Ltd (Южная Корея) отвечает мировым стандартам качества кровельных и стеновых сэндвич-панелей."
+msgstr "Dai San Industrial Co. Ltd (Janubiy Koreya) ishlab chiqarish liniyasi tom yopish uchun va devor uchun sendvich-panellarning jahon sifat standartlariga javob beradi."
+
+msgid "Производство и продажа сэндвич-панелей, профнастила, металлоконструкций в Ташкенте."
+msgstr "Toshkentda sendvich-panellar, profnastil, metall konstruksiyalar ishlab chiqarish va sotish."
+
+msgid "Производство кровельных и стеновых сэндвич-панелей, профнастила, металлоконструкций и проката в Ташкенте с 2017 года."
+msgstr "2017-yildan beri Toshkentda tom yopish uchun va devor uchun sendvich-panellar, profnastil, metall konstruksiyalar va prokat ishlab chiqarish."
+
+msgid "Производство с 2017 года · Ташкент"
+msgstr "2017-yildan beri ishlab chiqarish · Toshkent"
+
+msgid "Разделы"
+msgstr "Bo'limlar"
+
+msgid "Рассчитать стоимость"
+msgstr "Narxni hisoblash"
+
+msgid "Реализованные объекты: производственные, складские и торговые здания, металлоконструкции и кровли."
+msgstr "Amalga oshirilgan obyektlar: ishlab chiqarish, ombor va savdo binolari, metall konstruksiyalar va tomlar."
+
+msgid "Результаты поиска"
+msgstr "Qidiruv natijalari"
+
+msgid "Рекомендуемый"
+msgstr "Tavsiya etilgan"
+
+msgid "Родительская категория"
+msgstr "Bosh toifa"
+
+msgid "Свяжитесь с нужным направлением или оставьте заявку — мы перезвоним."
+msgstr "Kerakli bo'lim bilan bog'laning yoki buyurtma qoldiring — biz qayta qo'ng'iroq qilamiz."
+
+msgid "Сертификат"
+msgstr "Sertifikat"
+
+msgid "Сертификаты"
+msgstr "Sertifikatlar"
+
+msgid "Сертификаты появятся здесь."
+msgstr "Sertifikatlar shu yerda paydo bo'ladi."
+
+msgid "Слаг"
+msgstr "Slug"
+
+msgid "Смотреть"
+msgstr "Ko'rish"
+
+msgid "Собственное производство кровельных и стеновых сэндвич-панелей на линии Dai San (Корея). Профнастил, лист, арматура, штрипс и доборные элементы — со склада и под заказ."
+msgstr "Dai San (Koreya) liniyasida tom yopish uchun va devor uchun sendvich-panellarni xususiy ishlab chiqarish. Profnastil, list, armatura, shtrips va qo'shimcha elementlar — ombordan va buyurtma asosida."
+
+msgid "Создана"
+msgstr "Yaratilgan"
+
+msgid "Сообщение"
+msgstr "Xabar"
+
+msgid "Сообщение (необязательно)"
+msgstr "Xabar (ixtiyoriy)"
+
+msgid "Спасибо! Ваша заявка отправлена."
+msgstr "Rahmat! Buyurtmangiz yuborildi."
+
+msgid "Спасибо! Ваша заявка отправлена. Мы свяжемся с вами."
+msgstr "Rahmat! Buyurtmangiz yuborildi. Biz siz bilan bog'lanamiz."
+
+msgid "Страница"
+msgstr "Sahifa"
+
+msgid "Сэндвич-панели, профнастил и металлоконструкции"
+msgstr "Sendvich-panellar, profnastil va metall konstruksiyalar"
+
+msgid "Сэндвич-панели, профнастил, лист, арматура, штрипс, металлоконструкции и доборные элементы."
+msgstr "Sendvich-panellar, profnastil, list, armatura, shtrips, metall konstruksiyalar va qo'shimcha elementlar."
+
+msgid "Телефон"
+msgstr "Telefon"
+
+msgid "Телефон направления"
+msgstr "Yo'nalish telefoni"
+
+msgid "Телефон направления:"
+msgstr "Yo'nalish telefoni:"
+
+msgid "Телефоны"
+msgstr "Telefonlar"
+
+msgid "Телефоны по направлениям"
+msgstr "Yo'nalishlar bo'yicha telefonlar"
+
+msgid "Технологический процесс"
+msgstr "Texnologik jarayon"
+
+msgid "Товар"
+msgstr "Mahsulot"
+
+msgid "Товары"
+msgstr "Mahsulotlar"
+
+msgid "Толщина полотна — от 50 до 125 мм"
+msgstr "Polotno qalinligi — 50 dan 125 mm gacha"
+
+msgid "Узнать цену"
+msgstr "Narxni bilish"
+
+msgid "Файл (PDF)"
+msgstr "Fayl (PDF)"
+
+msgid "Характеристика"
+msgstr "Xususiyati"
+
+msgid "Характеристики"
+msgstr "Xususiyatlari"
+
+msgid "Цвет (RAL)"
+msgstr "Rang (RAL)"
+
+msgid "Цвета (RAL)"
+msgstr "Ranglar (RAL)"
+
+msgid "Цвета RAL"
+msgstr "RAL ranglari"
+
+msgid "Цена"
+msgstr "Narxi"
+
+msgid "Часы работы"
+msgstr "Ish vaqti"
+
+msgid "Часы работы:"
+msgstr "Ish vaqti:"
+
+msgid "Энергосберегающие характеристики"
+msgstr "Energiya tejovchi xususiyatlari"
+
+msgid "год основания"
+msgstr "tashkil etilgan yil"
+
+msgid "линия (Южная Корея)"
+msgstr "liniya (Janubiy Koreya)"
+
+msgid "м²"
+msgstr "m²"
+
+msgid "м² панелей в год"
+msgstr "yiliga m² panel"
+
+msgid "м² производство"
+msgstr "m² ishlab chiqarish"
+
+msgid "млн"
+msgstr "mln"
+
+msgid "открыть каталог"
+msgstr "katalogni ochish"
+
+msgid "панелей в год"
+msgstr "yiliga panel"
+
+msgid "производственные площади"
+msgstr "ishlab chiqarish maydonlari"
+
+msgid "сэндвич-панели, профнастил, металлоконструкции в Ташкенте"
+msgstr "Toshkentda sendvich-panellar, profnastil, metall konstruksiyalar"

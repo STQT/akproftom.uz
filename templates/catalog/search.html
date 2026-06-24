@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Поиск" %}: {{ query }} — {{ site.company_name }}{% endblock %}
+
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <h1>{% trans "Результаты поиска" %}</h1>
+    {% if query %}<p>{% blocktranslate %}По запросу «{{ query }}»{% endblocktranslate %}</p>{% endif %}
+    <form class="search search--page" action="{% url 'catalog:search' %}" method="get" role="search">
+      <input type="search" name="q" value="{{ query }}" placeholder="{% trans 'Поиск по каталогу...' %}">
+      <button type="submit" class="btn btn--accent">{% trans "Найти" %}</button>
+    </form>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% if results %}
+      <div class="grid grid--products">
+        {% for product in results %}
+          {% include "includes/_product_card.html" %}
+        {% endfor %}
+      </div>
+    {% elif query %}
+      <p class="muted">{% trans "Ничего не найдено. Попробуйте изменить запрос или" %}
+        <a href="{% url 'catalog:index' %}">{% trans "открыть каталог" %}</a>.</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

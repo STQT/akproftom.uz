@@ -1,0 +1,28 @@
+{% load i18n %}
+{% comment %}
+Reusable «заявка на расчёт» form.
+Optional context: `product` (pre-links the request to a product),
+`form_title`, `form_subtitle`.
+{% endcomment %}
+<form class="inquiry-form" action="{% url 'core:inquiry' %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="next" value="{{ request.get_full_path }}">
+  {% if product %}<input type="hidden" name="product_id" value="{{ product.id }}">{% endif %}
+  {# honeypot — keep visually hidden, bots fill it #}
+  <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+  {% if form_title %}<h3 class="inquiry-form__title">{{ form_title }}</h3>{% endif %}
+  {% if form_subtitle %}<p class="inquiry-form__subtitle">{{ form_subtitle }}</p>{% endif %}
+
+  <div class="field">
+    <input type="text" name="name" required placeholder="{% trans 'Ваше имя' %}" autocomplete="name">
+  </div>
+  <div class="field">
+    <input type="tel" name="phone" required placeholder="+998 __ ___-__-__" autocomplete="tel">
+  </div>
+  <div class="field">
+    <textarea name="message" rows="3" placeholder="{% trans 'Сообщение (необязательно)' %}"></textarea>
+  </div>
+  <button type="submit" class="btn btn--accent btn--block">{% trans "Отправить заявку" %}</button>
+  <p class="inquiry-form__note">{% trans "Нажимая кнопку, вы соглашаетесь на обработку персональных данных." %}</p>
+</form>

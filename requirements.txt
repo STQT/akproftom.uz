@@ -1,0 +1,8 @@
+# TASHKENT PROFNASTIL SERVIS — catalog site (Django MVT)
+# Target: Python 3.10+ (cPanel "Setup Python App"). Verified on Python 3.14.
+Django>=5.2,<6.0
+django-modeltranslation>=0.19
+django-environ>=0.11
+Pillow>=10.0
+whitenoise>=6.6
+PyMySQL>=1.1

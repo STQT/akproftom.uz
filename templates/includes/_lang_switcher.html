@@ -1,0 +1,18 @@
+{% load i18n %}
+{% get_current_language as CUR %}
+{% get_available_languages as LANGS %}
+<div class="lang">
+  <button type="button" class="lang__current" aria-haspopup="true" aria-expanded="false">
+    {{ CUR|upper }} ▾
+  </button>
+  <div class="lang__menu">
+    {% for code, name in LANGS %}
+      <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="language" value="{{ code }}">
+        <input type="hidden" name="next" value="{{ request.path }}">
+        <button type="submit" class="lang__item {% if code == CUR %}is-active{% endif %}">{{ name }}</button>
+      </form>
+    {% endfor %}
+  </div>
+</div>
