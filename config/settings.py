@@ -140,12 +140,45 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 MEDIA_URL = "media/"
 MEDIA_ROOT = env("MEDIA_ROOT", default=str(BASE_DIR / "media"))
 
-STORAGES = {
-    "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+# Media files: local filesystem by default; Cloudflare R2 (S3-compatible) in
+# production when USE_R2=True. Static files always stay on WhiteNoise.
+USE_R2 = env.bool("USE_R2", default=False)
+
+if USE_R2:
+    AWS_ACCESS_KEY_ID = env("R2_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = env("R2_SECRET_ACCESS_KEY")
+    AWS_STORAGE_BUCKET_NAME = env("R2_BUCKET")
+    # R2 endpoint: https://<ACCOUNT_ID>.r2.cloudflarestorage.com
+    AWS_S3_ENDPOINT_URL = env("R2_ENDPOINT_URL")
+    # Public base URL for serving files (R2 public bucket or custom domain),
+    # e.g. https://pub-xxxx.r2.dev or https://media.akproftom.uz — no scheme in
+    # AWS_S3_CUSTOM_DOMAIN, so strip it.
+    AWS_S3_CUSTOM_DOMAIN = (
+        env("R2_PUBLIC_URL", default="")
+        .replace("https://", "")
+        .replace("http://", "")
+        .rstrip("/")
+    ) or None
+    AWS_S3_REGION_NAME = "auto"          # R2 ignores region but boto3 needs a value
+    AWS_S3_SIGNATURE_VERSION = "s3v4"
+    AWS_DEFAULT_ACL = None                # R2 has no ACLs
+    AWS_QUERYSTRING_AUTH = False          # public, clean URLs (no signed params)
+    AWS_S3_FILE_OVERWRITE = False         # keep distinct uploads with same name
+    AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "public, max-age=31536000"}
+
+    STORAGES = {
+        "default": {"BACKEND": "storages.backends.s3.S3Storage"},
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
+else:
+    STORAGES = {
+        "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
