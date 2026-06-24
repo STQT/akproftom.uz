@@ -140,8 +140,9 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 MEDIA_URL = "media/"
 MEDIA_ROOT = env("MEDIA_ROOT", default=str(BASE_DIR / "media"))
 
-# Media files: local filesystem by default; Cloudflare R2 (S3-compatible) in
-# production when USE_R2=True. Static files always stay on WhiteNoise.
+# Files: local filesystem + WhiteNoise by default; Cloudflare R2 (S3-compatible)
+# in production when USE_R2=True. With R2 on, both media and static live in the
+# same bucket under "media/" and "static/" prefixes.
 USE_R2 = env.bool("USE_R2", default=False)
 
 if USE_R2:
@@ -166,10 +167,18 @@ if USE_R2:
     AWS_S3_FILE_OVERWRITE = False         # keep distinct uploads with same name
     AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "public, max-age=31536000"}
 
+    # URLs become https://<R2_PUBLIC_URL>/media/... and /static/...
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/" if AWS_S3_CUSTOM_DOMAIN else "static/"
+
     STORAGES = {
-        "default": {"BACKEND": "storages.backends.s3.S3Storage"},
+        "default": {
+            "BACKEND": "storages.backends.s3.S3Storage",
+            "OPTIONS": {"location": "media"},
+        },
         "staticfiles": {
-            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+            # Manifest variant => hashed filenames for cache-busting on R2.
+            "BACKEND": "storages.backends.s3.S3ManifestStaticStorage",
+            "OPTIONS": {"location": "static"},
         },
     }
 else:
