@@ -269,6 +269,7 @@ class Command(BaseCommand):
     def _settings(self):
         s = SiteSettings.get()
         s.company_name = COMPANY_NAME
+        s.phone = s.phone or "+998 98 101-00-00"
         s.email = s.email or EMAIL
         s.telegram = s.telegram or "https://t.me/"
         s.instagram = s.instagram or "https://instagram.com/"

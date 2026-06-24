@@ -16,9 +16,11 @@
   <div class="container topbar__inner">
     <div class="topbar__contacts">
       {% if site.address %}<span class="topbar__item">📍 {{ site.address }}</span>{% endif %}
-      {% with phones|first as p %}
+      {% if site.phone %}
+        <a class="topbar__item" href="{{ site.phone_href }}">📞 {{ site.phone }}</a>
+      {% else %}{% with phones|first as p %}
         {% if p %}<a class="topbar__item" href="{{ p.tel_href }}">📞 {{ p.number }}</a>{% endif %}
-      {% endwith %}
+      {% endwith %}{% endif %}
     </div>
     <div class="topbar__right">
       {% if site.telegram %}<a class="topbar__social" href="{{ site.telegram }}" target="_blank" rel="noopener">Telegram</a>{% endif %}

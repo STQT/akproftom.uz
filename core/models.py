@@ -9,6 +9,10 @@ class SiteSettings(models.Model):
     company_name = models.CharField(_("Название компании"), max_length=200,
                                     default="TASHKENT PROFNASTIL SERVIS")
     address = models.CharField(_("Адрес"), max_length=300, blank=True)
+    phone = models.CharField(
+        _("Телефон в шапке"), max_length=40, blank=True,
+        help_text=_("Основной номер, показываемый в верхней панели сайта."),
+    )
     work_hours = models.CharField(_("Часы работы"), max_length=150, blank=True)
     email = models.EmailField(_("E-mail"), blank=True)
     map_embed = models.TextField(
@@ -39,6 +43,11 @@ class SiteSettings(models.Model):
     def get(cls):
         obj, _created = cls.objects.get_or_create(pk=1)
         return obj
+
+    @property
+    def phone_href(self):
+        """`tel:` link for the header phone (digits and leading + only)."""
+        return "tel:" + "".join(c for c in self.phone if c.isdigit() or c == "+")
 
 
 class Phone(models.Model):
