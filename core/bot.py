@@ -53,6 +53,7 @@ def _root_kb():
     cats = Category.objects.filter(is_active=True, parent__isnull=True).order_by("order", "name")
     rows = [[{"text": c.name, "callback_data": f"cat:{c.id}"}] for c in cats]
     rows.append([{"text": "📝 Оставить заявку", "callback_data": "inq:0"}])
+    rows.append([{"text": "⬅ В меню", "callback_data": "menu"}])
     return {"inline_keyboard": rows}
 
 
@@ -70,17 +71,24 @@ def _edit_or_send(chat_id, message_id, has_photo, text, kb):
 
 # --- screens ---------------------------------------------------------------
 
-def _send_welcome(chat_id, user):
-    name = _full_name(user)
+def _menu_text(user=None):
+    name = _full_name(user) if user else ""
     hi = f", {escape(name)}" if name else ""
-    text = (
+    return (
         f"Здравствуйте{hi}! 👋\n\n"
         f"<b>{COMPANY}</b>\n"
         "Сэндвич-панели, профнастил, металлоконструкции и прокат.\n\n"
         "Выберите действие:"
     )
-    tg.api_call("sendMessage", chat_id=chat_id, text=text,
+
+
+def _send_welcome(chat_id, user):
+    tg.api_call("sendMessage", chat_id=chat_id, text=_menu_text(user),
                 parse_mode="HTML", reply_markup=_main_menu_kb())
+
+
+def _show_menu(chat_id, message_id, has_photo):
+    _edit_or_send(chat_id, message_id, has_photo, _menu_text(), _main_menu_kb())
 
 
 def _show_root(chat_id, message_id=None, has_photo=False):
@@ -251,7 +259,9 @@ def _handle_callback(cq):
     tg.api_call("answerCallbackQuery", callback_query_id=cq_id)
 
     try:
-        if data == "home":
+        if data == "menu":
+            _show_menu(chat_id, message_id, has_photo)
+        elif data == "home":
             _show_root(chat_id, message_id, has_photo)
         elif data.startswith("cat:"):
             _show_category(chat_id, message_id, has_photo, int(data[4:]))
