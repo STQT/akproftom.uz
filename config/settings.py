@@ -79,7 +79,19 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 
 # --- Database --------------------------------------------------------------
-if env("DB_ENGINE") == "mysql":
+if env("DB_ENGINE") == "postgres":
+    # PostgreSQL (used by the Docker Compose stack — see docker-compose.yml).
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": env("DB_NAME"),
+            "USER": env("DB_USER"),
+            "PASSWORD": env("DB_PASSWORD"),
+            "HOST": env("DB_HOST", default="localhost"),
+            "PORT": env("DB_PORT", default="5432"),
+        }
+    }
+elif env("DB_ENGINE") == "mysql":
     # PyMySQL acts as the MySQLdb driver (pure-python, easy on cPanel).
     import pymysql
 

@@ -1,0 +1,48 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-akproftom}
+      POSTGRES_USER: ${DB_USER:-akproftom}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-akproftom}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-akproftom} -d ${DB_NAME:-akproftom}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    # Exposed on the host for debugging; remove if not needed.
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      # Force the PostgreSQL backend regardless of .env.
+      DB_ENGINE: postgres
+      DB_NAME: ${DB_NAME:-akproftom}
+      DB_USER: ${DB_USER:-akproftom}
+      DB_PASSWORD: ${DB_PASSWORD:-akproftom}
+      DB_HOST: db
+      DB_PORT: 5432
+    env_file:
+      # Optional — holds SECRET_KEY, ALLOWED_HOSTS, Telegram/R2 settings, etc.
+      # Copy .env.example to .env to use it.
+      - path: .env
+        required: false
+    volumes:
+      - media_data:/app/media
+      - static_data:/app/staticfiles
+    ports:
+      - "8000:8000"
+
+volumes:
+  postgres_data:
+  media_data:
+  static_data:
