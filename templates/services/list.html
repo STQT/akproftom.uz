@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Услуги" %} — {{ site.company_name }}{% endblock %}
+{% block meta_description %}{% trans "Металлообработка в Ташкенте: токарная и фрезерная обработка, сварка, изготовление шестерён, расточные и сборочные работы по чертежам и образцам." %}{% endblock %}
+
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <h1>{% trans "Услуги" %}</h1>
+    <p>{% trans "Полный цикл металлообработки: работаем как по чертежам, так и по образцам. Срочное изготовление деталей любой сложности." %}</p>
+  </div>
+</section>
+
+{% for block in grouped %}
+<section class="section{% if forloop.counter|divisibleby:2 %} section--alt{% endif %} section--tight">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">{{ block.group.title }}</h2>
+    </div>
+    {% if block.group.description %}<p class="muted services-group__sub">{{ block.group.description }}</p>{% endif %}
+    <div class="grid grid--products">
+      {% for service in block.services %}
+        {% include "includes/_service_card.html" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+{% if ungrouped %}
+<section class="section section--tight">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">{% trans "Прочие услуги" %}</h2>
+    </div>
+    <div class="grid grid--products">
+      {% for service in ungrouped %}
+        {% include "includes/_service_card.html" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if not grouped and not ungrouped %}
+<section class="section">
+  <div class="container">
+    <p class="muted">{% trans "Услуги появятся здесь." %}</p>
+  </div>
+</section>
+{% endif %}
+
+<!-- CTA -->
+<section class="section cta">
+  <div class="container cta__inner">
+    <div class="cta__text">
+      <h2>{% trans "Нужна деталь или сварочные работы?" %}</h2>
+      <p>{% trans "Опишите задачу или пришлите чертёж — рассчитаем стоимость и сроки изготовления." %}</p>
+      <ul class="cta__phones">
+        {% for p in phones %}
+          <li><a href="{{ p.tel_href }}">{{ p.number }}</a>{% if p.label %} <span>— {{ p.label }}</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="cta__form card-surface">
+      {% include "includes/_inquiry_form.html" %}
+    </div>
+  </div>
+</section>
+{% endblock %}

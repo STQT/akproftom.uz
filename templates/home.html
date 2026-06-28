@@ -79,6 +79,24 @@
 </section>
 {% endif %}
 
+<!-- Services -->
+{% if services %}
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">{% trans "Услуги металлообработки" %}</h2>
+      <a class="section__link" href="{% url 'services:list' %}">{% trans "Все услуги" %} →</a>
+    </div>
+    <p class="muted services-group__sub">{% trans "Токарная и фрезерная обработка, сварка, изготовление деталей по чертежам и образцам." %}</p>
+    <div class="grid grid--products">
+      {% for service in services %}
+        {% include "includes/_service_card.html" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
 <!-- Projects -->
 {% if projects %}
 <section class="section section--alt">

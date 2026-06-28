@@ -40,6 +40,7 @@ urlpatterns += i18n_patterns(
     path("", include("core.urls")),
     path("", include("catalog.urls")),
     path("projects/", include("projects.urls")),
+    path("services/", include("services.urls")),
     prefix_default_language=True,
 )
 

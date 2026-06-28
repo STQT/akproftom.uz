@@ -73,6 +73,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="nav" id="main-nav">
       <a href="{% url 'core:home' %}">{% trans "Главная" %}</a>
       <a href="{% url 'catalog:index' %}">{% trans "Каталог" %}</a>
+      <a href="{% url 'services:list' %}">{% trans "Услуги" %}</a>
       <a href="{% url 'core:about' %}">{% trans "О компании" %}</a>
       <a href="{% url 'projects:list' %}">{% trans "Наши работы" %}</a>
       <a href="{% url 'core:colors' %}">{% trans "Цвета RAL" %}</a>
@@ -129,6 +130,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h4>{% trans "Разделы" %}</h4>
       <ul class="footer__links">
         <li><a href="{% url 'core:about' %}">{% trans "О компании" %}</a></li>
+        <li><a href="{% url 'services:list' %}">{% trans "Услуги" %}</a></li>
         <li><a href="{% url 'projects:list' %}">{% trans "Наши работы" %}</a></li>
         <li><a href="{% url 'core:colors' %}">{% trans "Цвета RAL" %}</a></li>
         <li><a href="{% url 'core:certificates' %}">{% trans "Сертификаты" %}</a></li>

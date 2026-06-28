@@ -12,6 +12,7 @@ from django.views.decorators.http import require_POST
 
 from catalog.models import Category, Color, Product
 from projects.models import Project
+from services.models import Service
 
 from .forms import InquiryForm
 from .models import Certificate
@@ -26,9 +27,18 @@ def home(request):
     featured = list(Product.objects.filter(is_active=True, is_featured=True)[:8])
     if not featured:
         featured = list(Product.objects.filter(is_active=True)[:8])
+    services = list(
+        Service.objects.filter(is_active=True, is_featured=True)
+        .select_related("group")[:6]
+    )
+    if not services:
+        services = list(
+            Service.objects.filter(is_active=True).select_related("group")[:6]
+        )
     context = {
         "categories": categories,
         "featured_products": featured,
+        "services": services,
         "projects": Project.objects.filter(is_active=True)[:6],
         "certificates": Certificate.objects.all()[:6],
     }

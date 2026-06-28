@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ service.title }} — {{ site.company_name }}{% endblock %}
+{% block meta_description %}{{ service.short_description|default:service.title }}{% endblock %}
+
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <a class="back-link" href="{% url 'services:list' %}">← {% trans "Все услуги" %}</a>
+    <h1>{{ service.title }}</h1>
+    {% if service.group %}<p class="page-head__meta">{{ service.group.title }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    {% if service.image %}
+      <div class="project-detail__cover">
+        <img src="{{ service.image.url }}" alt="{{ service.title }}">
+      </div>
+    {% endif %}
+
+    {% if service.short_description %}<p class="lead">{{ service.short_description }}</p>{% endif %}
+    {% if service.description %}
+      <div class="prose">{{ service.description|linebreaks }}</div>
+    {% endif %}
+
+    {% if gallery %}
+      <div class="gallery js-gallery">
+        {% for img in gallery %}
+          <a class="gallery__item" href="{{ img.image.url }}">
+            <img src="{{ img.image.url }}" alt="{{ img.alt|default:service.title }}" loading="lazy">
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="service-detail__actions">
+      <button type="button" class="btn btn--accent btn--lg js-open-modal">{% trans "Заказать услугу" %}</button>
+      <a class="btn btn--outline btn--lg" href="{% url 'services:list' %}">{% trans "Все услуги" %}</a>
+    </div>
+  </div>
+</section>
+
+{% if related %}
+<section class="section section--alt section--tight">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">{% trans "Похожие услуги" %}</h2>
+    </div>
+    <div class="grid grid--products">
+      {% for service in related %}
+        {% include "includes/_service_card.html" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

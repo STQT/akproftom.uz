@@ -347,3 +347,9 @@ a.topbar__item:hover { color: #fff; }
   .footer__grid { grid-template-columns: 1fr; }
   .topbar__contacts .topbar__item:first-child { display: none; }
 }
+
+/* ---------- Services ---------- */
+.services-group__sub { margin: -16px 0 24px; max-width: 720px; }
+.lead { font-size: 1.12rem; color: var(--ink); margin: 0 0 18px; max-width: 760px; }
+.page-head__meta { color: var(--muted); margin: 6px 0 0; }
+.service-detail__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "core",
     "catalog",
     "projects",
+    "services",
 ]
 
 MIDDLEWARE = [
